@@ -1,3 +1,1 @@
 User-agent: *
-Disallow:
-Sitemap: https://carmelolg.github.io/it-is-worth-a-coke/sitemap.xml

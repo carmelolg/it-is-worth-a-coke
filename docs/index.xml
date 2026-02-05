@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>It&#39;s worth a Coke</title>
     <link>https://carmelolg.github.io/it-is-worth-a-coke/</link>
     <description>Recent content on It&#39;s worth a Coke</description>
-    <image>
-      <title>It&#39;s worth a Coke</title>
-      <url>https://carmelolg.github.io/it-is-worth-a-coke/images/papermod-cover.png</url>
-      <link>https://carmelolg.github.io/it-is-worth-a-coke/images/papermod-cover.png</link>
-    </image>
-    <generator>Hugo -- 0.155.2</generator>
-    <language>en-EN</language>
-    <copyright>carmelolg</copyright>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>© [carmelolg](https://carmelolg.github.io/)</copyright>
     <lastBuildDate>Sun, 01 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://carmelolg.github.io/it-is-worth-a-coke/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -19,9 +14,21 @@
       <link>https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/</link>
       <pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
       <guid>https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/</guid>
-      <description>&lt;p&gt;This article presents a technical and scientific overview of the Agentic TotChef repository — a Python-based agentic application that combines modular architecture, multiple interaction surfaces (CLI and GUI), and agent-oriented design patterns to enable robust, testable, and maintainable automation. The manuscript describes the system architecture, highlights how established best practices and software patterns are applied, and argues how an agentic design pattern benefits scalability, reproducibility, and research-oriented experimentation.&lt;/p&gt;
-&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;Agentic TotChef is an experimental project exploring agentic systems in the context of a small, focused automation application. The repository provides a core agent runtime with chat-capable interfaces (CLI and GUI), supporting libraries, and assets for delivering a packaged developer experience (Dockerfile, requirements.txt, run scripts). The goal is a reproducible environment where agents can be easily composed, instrumented, and evaluated.&lt;/p&gt;</description>
+      <description>&lt;p&gt;This article presents a technical and scientific overview of the Agentic TotChef repository — a Python-based agentic application that combines modular architecture, multiple interaction surfaces (CLI and GUI), and agent-oriented design patterns to enable robust, testable, and maintainable automation. The manuscript describes the system architecture, highlights how established best practices and software patterns are applied, and argues how an agentic design pattern benefits scalability, reproducibility, and research-oriented experimentation.&lt;/p&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Agentic TotChef is an experimental project exploring agentic systems in the context of a small, focused automation application. The repository provides a core agent runtime with chat-capable interfaces (CLI and GUI), supporting libraries, and assets for delivering a packaged developer experience (Dockerfile, requirements.txt, run scripts). The goal is a reproducible environment where agents can be easily composed, instrumented, and evaluated.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Archive</title>
+      <link>https://carmelolg.github.io/it-is-worth-a-coke/archives/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://carmelolg.github.io/it-is-worth-a-coke/archives/</guid>
+      <description>archives</description>
+    </item>
+    <item>
+      <title>Search</title>
+      <link>https://carmelolg.github.io/it-is-worth-a-coke/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://carmelolg.github.io/it-is-worth-a-coke/search/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>
