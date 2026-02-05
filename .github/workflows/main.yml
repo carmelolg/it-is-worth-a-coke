@@ -1,0 +1,45 @@
+name: site build
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    
+    # Step 1 - Checks-out your repository under $GITHUB_WORKSPACE
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+          submodules: false  # Fetch Hugo themes
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
+    # Step 2 - Sets up the latest version of Hugo
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+          hugo-version: 'latest'
+
+    # Step 3 - Clean and don't fail
+    - name: Clean public directory
+      run: rm -rf *
+      working-directory: docs
+
+    # Step 4 - Builds the site using the latest version of Hugo
+    # Also specifies the theme we want to use
+    - name: Build
+      run: hugo --destination docs
+
+    # Step 5 - Push our generated site to our gh-pages branch
+    - name: Commit the docs
+      run: |
+        git config --global user.name 'carmelolg'
+        git config --global user.email 'carmelolagamba@hotmail.it'
+        git add -A
+        git commit -m "docs automatic build"
+        git push
+
