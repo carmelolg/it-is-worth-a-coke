@@ -1,8 +1,8 @@
-
 baseURL: "https://carmelolg.github.io/it-is-worth-a-coke/"
 title: It's worth a Coke
 copyright: "© [carmelolg](https://carmelolg.github.io/)"
-theme: ["PaperMod"]
+theme: ["hugo-PaperMod"]
+languageCode: en-EN
 
 enableInlineShortcodes: true
 enableRobotsTXT: true
