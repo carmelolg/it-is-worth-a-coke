@@ -2,46 +2,46 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on It&#39;s worth a Coke</title>
-    <link>https://carmelolg.github.io/it-s-worth-a-coke/tags/</link>
+    <link>https://carmelolg.github.io/it-is-worth-a-coke/tags/</link>
     <description>Recent content in Tags on It&#39;s worth a Coke</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>© [carmelolg](https://carmelolg.github.io/)</copyright>
     <lastBuildDate>Sun, 01 Feb 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://carmelolg.github.io/it-s-worth-a-coke/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://carmelolg.github.io/it-is-worth-a-coke/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Agent</title>
-      <link>https://carmelolg.github.io/it-s-worth-a-coke/tags/agent/</link>
+      <link>https://carmelolg.github.io/it-is-worth-a-coke/tags/agent/</link>
       <pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://carmelolg.github.io/it-s-worth-a-coke/tags/agent/</guid>
+      <guid>https://carmelolg.github.io/it-is-worth-a-coke/tags/agent/</guid>
       <description></description>
     </item>
     <item>
       <title>AI</title>
-      <link>https://carmelolg.github.io/it-s-worth-a-coke/tags/ai/</link>
+      <link>https://carmelolg.github.io/it-is-worth-a-coke/tags/ai/</link>
       <pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://carmelolg.github.io/it-s-worth-a-coke/tags/ai/</guid>
+      <guid>https://carmelolg.github.io/it-is-worth-a-coke/tags/ai/</guid>
       <description></description>
     </item>
     <item>
       <title>GenAI</title>
-      <link>https://carmelolg.github.io/it-s-worth-a-coke/tags/genai/</link>
+      <link>https://carmelolg.github.io/it-is-worth-a-coke/tags/genai/</link>
       <pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://carmelolg.github.io/it-s-worth-a-coke/tags/genai/</guid>
+      <guid>https://carmelolg.github.io/it-is-worth-a-coke/tags/genai/</guid>
       <description></description>
     </item>
     <item>
       <title>Ollama</title>
-      <link>https://carmelolg.github.io/it-s-worth-a-coke/tags/ollama/</link>
+      <link>https://carmelolg.github.io/it-is-worth-a-coke/tags/ollama/</link>
       <pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://carmelolg.github.io/it-s-worth-a-coke/tags/ollama/</guid>
+      <guid>https://carmelolg.github.io/it-is-worth-a-coke/tags/ollama/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>https://carmelolg.github.io/it-s-worth-a-coke/tags/python/</link>
+      <link>https://carmelolg.github.io/it-is-worth-a-coke/tags/python/</link>
       <pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://carmelolg.github.io/it-s-worth-a-coke/tags/python/</guid>
+      <guid>https://carmelolg.github.io/it-is-worth-a-coke/tags/python/</guid>
       <description></description>
     </item>
   </channel>
