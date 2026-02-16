@@ -6,22 +6,27 @@
     <description>Recent content on It&#39;s worth a Coke</description>
     <image>
       <title>It&#39;s worth a Coke</title>
-      <url>https://carmelolg.github.io/it-is-worth-a-coke/images/papermod-cover.png</url>
-      <link>https://carmelolg.github.io/it-is-worth-a-coke/images/papermod-cover.png</link>
+      <url>https://carmelolg.github.io/it-is-worth-a-coke/images/Tokio.jpeg</url>
+      <link>https://carmelolg.github.io/it-is-worth-a-coke/images/Tokio.jpeg</link>
     </image>
-    <generator>Hugo -- 0.155.2</generator>
+    <generator>Hugo -- 0.155.3</generator>
     <language>en-EN</language>
     <copyright>carmelolg</copyright>
-    <lastBuildDate>Sun, 01 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 16 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://carmelolg.github.io/it-is-worth-a-coke/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Agentic TotChef: Architecture, Patterns, and Best Practices</title>
-      <link>https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/</link>
-      <pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/</guid>
-      <description>&lt;p&gt;This article presents a technical and scientific overview of the Agentic TotChef repository — a Python-based agentic application that combines modular architecture, multiple interaction surfaces (CLI and GUI), and agent-oriented design patterns to enable robust, testable, and maintainable automation. The manuscript describes the system architecture, highlights how established best practices and software patterns are applied, and argues how an agentic design pattern benefits scalability, reproducibility, and research-oriented experimentation.&lt;/p&gt;
-&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;Agentic TotChef is an experimental project exploring agentic systems in the context of a small, focused automation application. The repository provides a core agent runtime with chat-capable interfaces (CLI and GUI), supporting libraries, and assets for delivering a packaged developer experience (Dockerfile, requirements.txt, run scripts). The goal is a reproducible environment where agents can be easily composed, instrumented, and evaluated.&lt;/p&gt;</description>
+      <title>Agentic TotChef: Architetture software, Patterns, and Best Practices</title>
+      <link>https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/ai-agentic-flow-architecture_italian/</link>
+      <pubDate>Mon, 16 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/ai-agentic-flow-architecture_italian/</guid>
+      <description>L&amp;#39;articolo esplora l&amp;#39;architettura software, i design pattern e le best practice per progettare agenti AI scalabili e manutenibili, utilizzando un caso di studio chiamato &amp;#39;TotChef&amp;#39; che genera menù settimanali per una bambina di 1 anno.</description>
+    </item>
+    <item>
+      <title>Agentic TotChef: Software Architectures, Patterns, and Best Practices</title>
+      <link>https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/ai-agentic-flow-architecture_english/</link>
+      <pubDate>Mon, 16 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/ai-agentic-flow-architecture_english/</guid>
+      <description>The article explores software architecture, design patterns, and best practices for designing scalable and maintainable AI agents, using a case study called &amp;#39;TotChef&amp;#39; which generates weekly menus for a 1-year-old child.</description>
     </item>
   </channel>
 </rss>

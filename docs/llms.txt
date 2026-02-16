@@ -1,4 +1,5 @@
 # It's worth a Coke
 
 ## Posts
-- [Agentic TotChef: Architecture, Patterns, and Best Practices](https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/)
+- [Agentic TotChef: Architetture software, Patterns, and Best Practices](https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/ai-agentic-flow-architecture_italian/)
+- [Agentic TotChef: Software Architectures, Patterns, and Best Practices](https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/ai-agentic-flow-architecture_english/)
