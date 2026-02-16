@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Agentic TotChef: Software Architectures, Patterns, and Best Practices | It&#39;s worth a Coke</title>
+<meta name="keywords" content="AI, GenAI, Agent, Ollama, Python">
+<meta name="description" content="The article explores software architecture, design patterns, and best practices for designing scalable and maintainable AI agents, using a case study called &#39;TotChef&#39; which generates weekly menus for a 1-year-old child.">
+<meta name="author" content="carmelolg">
+<link rel="canonical" href="https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/ai-agentic-flow-architecture_english/">
+<link crossorigin="anonymous" href="/it-is-worth-a-coke/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://carmelolg.github.io/it-is-worth-a-coke/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://carmelolg.github.io/it-is-worth-a-coke/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://carmelolg.github.io/it-is-worth-a-coke/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://carmelolg.github.io/it-is-worth-a-coke/apple-touch-icon.png">
+<link rel="mask-icon" href="https://carmelolg.github.io/it-is-worth-a-coke/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/ai-agentic-flow-architecture_english/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/ai-agentic-flow-architecture_english/">
+  <meta property="og:site_name" content="It&#39;s worth a Coke">
+  <meta property="og:title" content="Agentic TotChef: Software Architectures, Patterns, and Best Practices">
+  <meta property="og:description" content="The article explores software architecture, design patterns, and best practices for designing scalable and maintainable AI agents, using a case study called &#39;TotChef&#39; which generates weekly menus for a 1-year-old child.">
+  <meta property="og:locale" content="en-EN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-02-16T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-02-16T00:00:00+00:00">
+    <meta property="article:tag" content="AI">
+    <meta property="article:tag" content="GenAI">
+    <meta property="article:tag" content="Agent">
+    <meta property="article:tag" content="Ollama">
+    <meta property="article:tag" content="Python">
+      <meta property="og:image" content="https://carmelolg.github.io/it-is-worth-a-coke/images/Tokio.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://carmelolg.github.io/it-is-worth-a-coke/images/Tokio.jpeg">
+<meta name="twitter:title" content="Agentic TotChef: Software Architectures, Patterns, and Best Practices">
+<meta name="twitter:description" content="The article explores software architecture, design patterns, and best practices for designing scalable and maintainable AI agents, using a case study called &#39;TotChef&#39; which generates weekly menus for a 1-year-old child.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://carmelolg.github.io/it-is-worth-a-coke/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Agentic TotChef: Software Architectures, Patterns, and Best Practices",
+      "item": "https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/ai-agentic-flow-architecture_english/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Agentic TotChef: Software Architectures, Patterns, and Best Practices",
+  "name": "Agentic TotChef: Software Architectures, Patterns, and Best Practices",
+  "description": "The article explores software architecture, design patterns, and best practices for designing scalable and maintainable AI agents, using a case study called 'TotChef' which generates weekly menus for a 1-year-old child.",
+  "keywords": [
+    "AI", "GenAI", "Agent", "Ollama", "Python"
+  ],
+  "articleBody": " Introduction The development of source code assisted by artificial intelligence systems is now experiencing exponential growth. The capabilities of LLMs provided by various providers allow, even in Zero-Shot Learning mode, to generate quality source code with a high level of abstraction and complexity. The results, which I consider surprising, come from the use of so-called Agent AI (in ReAct mode and assisted by Server MCP), improving developer productivity.\nBut let’s pause for a moment. While the world is filled with enthusiasm and expectations, it is important to remember that the generation of source code by an LLM (in agentic mode or not) is only one part of the software development process. The demand for Software Architects is destined to remain high to avoid the risk of creating software that, although functional, is underperforming, difficult to maintain, scale, and extend.\nAll of us have participated in software projects that, although functional, had enormous technical debt that was difficult to contain. Time and costs have often negatively influenced software quality, leading to quick and dirty solutions that, although they solved the immediate problem, increased the percentages of underperforming source code and sometimes even exposed to vulnerabilities.\nThe question is: in a phase where technologies are evolving rapidly, can we afford to make the same mistake again?\nThe answer must be no, also because, in addition to technical debt, in this case there are active costs (AI service providers, vector databases, …) to consider that are not insignificant.\nUsing AI agents without a solid foundation of software design runs the risk of haphazardly designing systems that work, but are not scalable and maintainable. Among the risks we find:\n“over-engineering”, i.e., designing overly complex systems to solve simple problems, with a consequent increase in the project’s active costs. inadequate performance due to sub-optimal design of AI Agents, which could lead to longer response times and an unsatisfactory user experience. Objective In this article, I will share an exercise performed with the aim of testing some agent design patterns. The exercise is based on a small example software called Agentic TotChef, which aims to generate a weekly menu for a 1-year-old child, taking into account what they eat at nursery school, from the family recipe book, and what is available at home.\nThe exercise helped me understand limits and advantages including:\nThe use of SLMs (Small Language Models) to contain costs and obtain satisfactory results. The adoption of design patterns and best practices for designing AI agents with a good degree of performance. Small Language Models: limits and advantages While it is true that large language models (LLMs) like GPT-5, Gemini, Claude, Grok, and the like offer extraordinary capabilities, it is equally true that Small Language Models (SLMs) are gaining ground thanks to their efficiency and reduced costs.\nSLMs, like those offered by Ollama, are designed to be lighter and less expensive, making them ideal for specific applications that do not require the power of a full LLM.\nAmong the advantages:\nReduced costs: SLMs are generally cheaper to use than LLMs, making them accessible even for projects with limited budgets. Efficiency: SLMs can be faster at generating responses, especially when dealing with specific tasks that do not require a deep understanding of the context. Personalization: With the addition of specific context, it is possible to obtain more relevant and accurate results, making the most of the SLM’s capabilities. However, it is important to recognize the limitations of SLMs, such as their ability to understand complex contexts or generate creative responses. Therefore, the choice between LLM and SLM depends on the specific needs of the project and the objectives to be achieved.\nIn my case, for the TotChef project, I opted for qwen3-8b, which proved sufficient to generate accurate and relevant weekly menus. Obviously, we are talking about medium-low complexity requirements and limited hardware. In any case, enough to achieve a satisfactory result with acceptable response times.\nAgentic Design Patterns: an approach to designing scalable and maintainable AI agents TotChef: Software Architecture Conclusions ",
+  "wordCount" : "667",
+  "inLanguage": "en",
+  "image": "https://carmelolg.github.io/it-is-worth-a-coke/images/Tokio.jpeg","datePublished": "2026-02-16T00:00:00Z",
+  "dateModified": "2026-02-16T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "carmelolg"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/ai-agentic-flow-architecture_english/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "It's worth a Coke",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://carmelolg.github.io/it-is-worth-a-coke/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://carmelolg.github.io/it-is-worth-a-coke/" accesskey="h" title="It&#39;s worth a Coke (Alt + H)">It&#39;s worth a Coke</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://carmelolg.github.io/it-is-worth-a-coke/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://carmelolg.github.io/it-is-worth-a-coke/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://carmelolg.github.io/it-is-worth-a-coke/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://carmelolg.github.io/" title="Who I am">
+                    <span>Who I am</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Agentic TotChef: Software Architectures, Patterns, and Best Practices
+    </h1>
+    <div class="post-description">
+      The article explores software architecture, design patterns, and best practices for designing scalable and maintainable AI agents, using a case study called &#39;TotChef&#39; which generates weekly menus for a 1-year-old child.
+    </div>
+    <div class="post-meta"><span title='2026-02-16 00:00:00 +0000 UTC'>February 16, 2026</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>carmelolg</span>
+
+</div>
+  </header> 
+  <div class="post-content"><!-- During an intensive reading session, I came across a very interesting book: Agentic Design Patterns by Antonio Gulli, Eng Director at Google. -->
+<h1 id="introduction">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction">#</a></h1>
+<p>The development of source code assisted by artificial intelligence systems is now experiencing exponential growth.
+The capabilities of LLMs provided by various providers allow, even in <a href="https://www.promptingguide.ai/techniques/zeroshot">Zero-Shot Learning</a> mode, to generate quality source code with a high level of abstraction and complexity.
+The results, which I consider surprising, come from the use of so-called <strong>Agent AI</strong> (in <a href="https://www.promptingguide.ai/techniques/react">ReAct</a> mode and assisted by <a href="https://modelcontextprotocol.io/docs/getting-started/intro">Server MCP</a>), improving developer productivity.</p>
+<p>But let&rsquo;s pause for a moment. While the world is filled with enthusiasm and expectations, it is important to remember that the generation of source code by an LLM (in agentic mode or not)
+<strong>is only one part of the software development process</strong>. The demand for Software Architects is destined to remain high to avoid the risk of creating software
+that, although functional, is underperforming, difficult to maintain, scale, and extend.</p>
+<p>All of us have participated in software projects that, although functional, had enormous technical debt that was difficult to contain.
+Time and costs have often negatively influenced software quality, leading to <em>quick and dirty</em> solutions that, although they solved the immediate problem,
+increased the percentages of underperforming source code and sometimes even exposed to vulnerabilities.</p>
+<p><strong>The question is: in a phase where technologies are evolving rapidly, can we afford to make the same mistake again?</strong></p>
+<p><strong>The answer must be no</strong>, also because, in addition to technical debt, in this case there are active costs (AI service providers, vector databases, &hellip;) to consider that are not insignificant.</p>
+<p>Using AI agents without a solid foundation of software design runs the risk of haphazardly designing systems that work, but are not scalable and maintainable.
+Among the risks we find:</p>
+<ul>
+<li>&ldquo;over-engineering&rdquo;, i.e., designing overly complex systems to solve simple problems, with a consequent increase in the project&rsquo;s active costs.</li>
+<li>inadequate performance due to sub-optimal design of AI Agents, which could lead to longer response times and an unsatisfactory user experience.</li>
+</ul>
+<h1 id="objective">Objective<a hidden class="anchor" aria-hidden="true" href="#objective">#</a></h1>
+<p>In this article, I will share an exercise performed with the aim of testing some <em>agent design patterns</em>.
+The exercise is based on a small example software called <strong>Agentic TotChef</strong>, which aims to generate
+a weekly menu for a 1-year-old child, taking into account what they eat at nursery school, from the family recipe book, and what is available at home.</p>
+<p>The exercise helped me understand limits and advantages including:</p>
+<ul>
+<li>The use of SLMs (Small Language Models) to contain costs and obtain satisfactory results.</li>
+<li>The adoption of design patterns and best practices for designing AI agents with a good degree of performance.</li>
+</ul>
+<h1 id="small-language-models-limits-and-advantages">Small Language Models: limits and advantages<a hidden class="anchor" aria-hidden="true" href="#small-language-models-limits-and-advantages">#</a></h1>
+<p>While it is true that large language models (LLMs) like GPT-5, Gemini, Claude, Grok, and the like offer extraordinary capabilities,
+it is equally true that Small Language Models (SLMs) are gaining ground thanks to their efficiency and reduced costs.</p>
+<p>SLMs, like those offered by Ollama, are designed to be lighter and less expensive, making them ideal for specific applications
+that do not require the power of a full LLM.</p>
+<p>Among the advantages:</p>
+<ul>
+<li><strong>Reduced costs</strong>: SLMs are generally cheaper to use than LLMs, making them accessible even for projects with limited budgets.</li>
+<li><strong>Efficiency</strong>: SLMs can be faster at generating responses, especially when dealing with specific tasks that do not require a deep understanding of the context.</li>
+<li><strong>Personalization</strong>: With the addition of specific context, it is possible to obtain more relevant and accurate results, making the most of the SLM&rsquo;s capabilities.</li>
+</ul>
+<p>However, it is important to recognize the limitations of SLMs, such as their ability to understand complex contexts or generate creative responses.
+Therefore, the choice between LLM and SLM depends on the specific needs of the project and the objectives to be achieved.</p>
+<p>In my case, for the TotChef project, I opted for <strong>qwen3-8b</strong>, which proved sufficient to generate accurate and relevant weekly menus.
+Obviously, we are talking about medium-low complexity requirements and limited hardware.
+In any case, enough to achieve a satisfactory result with acceptable response times.</p>
+<h1 id="agentic-design-patterns-an-approach-to-designing-scalable-and-maintainable-ai-agents">Agentic Design Patterns: an approach to designing scalable and maintainable AI agents<a hidden class="anchor" aria-hidden="true" href="#agentic-design-patterns-an-approach-to-designing-scalable-and-maintainable-ai-agents">#</a></h1>
+<h1 id="totchef-software-architecture">TotChef: Software Architecture<a hidden class="anchor" aria-hidden="true" href="#totchef-software-architecture">#</a></h1>
+<p><img alt="Agentic TotChefArchitecture" loading="lazy" src="../../totchef-arch.png"></p>
+<h1 id="conclusions">Conclusions<a hidden class="anchor" aria-hidden="true" href="#conclusions">#</a></h1>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://carmelolg.github.io/it-is-worth-a-coke/tags/ai/">AI</a></li>
+      <li><a href="https://carmelolg.github.io/it-is-worth-a-coke/tags/genai/">GenAI</a></li>
+      <li><a href="https://carmelolg.github.io/it-is-worth-a-coke/tags/agent/">Agent</a></li>
+      <li><a href="https://carmelolg.github.io/it-is-worth-a-coke/tags/ollama/">Ollama</a></li>
+      <li><a href="https://carmelolg.github.io/it-is-worth-a-coke/tags/python/">Python</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/ai-agentic-flow-architecture_italian/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Agentic TotChef: Architetture software, Patterns, and Best Practices</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>© <a href="https://carmelolg.github.io/">carmelolg</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
