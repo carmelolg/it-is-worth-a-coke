@@ -58,6 +58,7 @@ outputs:
     - JSON
     - llms
 
+
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   description: "Technical blog about programming, web development, and technology."
@@ -78,9 +79,10 @@ params:
   ShowPageNums: true
   ShowToc: false
   # comments: false
-  images: ["images/papermod-cover.png"]
+  images: ["images/Tokio.jpeg"]
 
   homeInfoParams:
+    title: "It's worth a Coke"
     Content: >
       Let me vent about the marvelous world of **computer science**. <br/>
       Technical blog of <a href="https://github.com/carmelolg" target="_blank">carmelolg</a>.
@@ -162,3 +164,4 @@ services:
     disableInlineCSS: true
   x:
     disableInlineCSS: true
+
