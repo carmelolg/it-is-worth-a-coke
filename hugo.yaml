@@ -103,10 +103,6 @@ params:
   # icon: icon.png
   # iconHeight: 35
 
-  analytics:
-    google:
-      SiteVerificationTag: "G-PEC7RY0337"
-
   assets:
     disableHLJS: true
   #     favicon: "<link / abs url>"
@@ -128,6 +124,12 @@ params:
   #     threshold: 0.4
   #     minMatchCharLength: 0
   #     keys: ["title", "permalink", "summary", "content"]
+  # Configurazione servizi
+  services:
+    rss:
+      limit: 20  # Solo ultimi 20 articoli nel feed
+    googleAnalytics:
+      id: G-PEC7RY0337
 
 markup:
   goldmark:
