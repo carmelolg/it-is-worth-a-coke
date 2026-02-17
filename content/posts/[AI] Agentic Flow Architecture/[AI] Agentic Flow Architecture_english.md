@@ -65,6 +65,6 @@ In any case, enough to achieve a satisfactory result with acceptable response ti
 
 # TotChef: Software Architecture
 
-![Agentic TotChefArchitecture](totchef-arch.png)
+![Agentic TotChefArchitecture](https://github.com/carmelolg/it-is-worth-a-coke/blob/925a8ed5780db0abd3cb9e282680add8cfec3eea/content/posts/%5BAI%5D%20Agentic%20Flow%20Architecture/totchef-arch.png)
 
 # Conclusions
