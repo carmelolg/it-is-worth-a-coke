@@ -65,6 +65,6 @@ In ogni caso quanto basta per arrivare ad un risultato soddisfacente con tempi d
 
 # TotChef: Architettura software
 
-![Agentic TotChefArchitecture](../../totchef-arch.png)
+![Agentic TotChefArchitecture](../totchef-arch.png)
 
 # Conclusioni

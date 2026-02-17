@@ -65,6 +65,6 @@ In any case, enough to achieve a satisfactory result with acceptable response ti
 
 # TotChef: Software Architecture
 
-![Agentic TotChefArchitecture](../../totchef-arch.png)
+![Agentic TotChefArchitecture](../totchef-arch.png)
 
 # Conclusions
