@@ -77,6 +77,10 @@ For me it was both a fun game and a practical way to better understand the limit
 - To see whether an SLM could deliver satisfying results
 - To write _boilerplate_ code (the part highlighted in purple in the diagram) for the design of [OAIA - OrchestrAI Architecture](https://github.com/carmelolg/OAIA), a reusable template for future projects.
 
+The diagram below illustrates the high-level architecture of Agentic TotChef:
+
+![Agentic TotChef Architecture](totchef-arch.png)
+
 ![Agentic TotChef Architecture](https://github.com/carmelolg/it-is-worth-a-coke/blob/925a8ed5780db0abd3cb9e282680add8cfec3eea/content/posts/%5BAI%5D%20Agentic%20Flow%20Architecture/totchef-arch.png?raw=true)
 
 The most interesting part of this tiny software architecture is the file **Runner**, highlighted in the green box on the right: it shows all the calls to **qwen3‑8b** and the interactions between the various agents.
