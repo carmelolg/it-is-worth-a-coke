@@ -81,8 +81,6 @@ The diagram below illustrates the high-level architecture of Agentic TotChef:
 
 ![Agentic TotChef Architecture](totchef-arch.png)
 
-![Agentic TotChef Architecture](https://github.com/carmelolg/it-is-worth-a-coke/blob/925a8ed5780db0abd3cb9e282680add8cfec3eea/content/posts/%5BAI%5D%20Agentic%20Flow%20Architecture/totchef-arch.png?raw=true)
-
 The most interesting part of this tiny software architecture is the file **Runner**, highlighted in the green box on the right: it shows all the calls to **qwen3‑8b** and the interactions between the various agents.
 
 In particular, you can clearly see how the **Prompt Chaining** design pattern is used to split the complex task of generating a weekly menu into a sequence of simpler steps, each implemented by a dedicated AI agent. 
