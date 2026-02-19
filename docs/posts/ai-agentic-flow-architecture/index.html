@@ -279,7 +279,6 @@ Still, it was enough to achieve a satisfying outcome with acceptable response ti
 </ul>
 <p>The diagram below illustrates the high-level architecture of Agentic TotChef:</p>
 <p><img alt="Agentic TotChef Architecture" loading="lazy" src="/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/totchef-arch.png"></p>
-<p><img alt="Agentic TotChef Architecture" loading="lazy" src="https://github.com/carmelolg/it-is-worth-a-coke/blob/925a8ed5780db0abd3cb9e282680add8cfec3eea/content/posts/%5BAI%5D%20Agentic%20Flow%20Architecture/totchef-arch.png?raw=true"></p>
 <p>The most interesting part of this tiny software architecture is the file <strong>Runner</strong>, highlighted in the green box on the right: it shows all the calls to <strong>qwen3‑8b</strong> and the interactions between the various agents.</p>
 <p>In particular, you can clearly see how the <strong>Prompt Chaining</strong> design pattern is used to split the complex task of generating a weekly menu into a sequence of simpler steps, each implemented by a dedicated AI agent.</p>
 <p>The <strong>Parallelization</strong> pattern, on the other hand, is used to run two independent steps in parallel:</p>
