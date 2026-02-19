@@ -277,16 +277,6 @@ Still, it was enough to achieve a satisfying outcome with acceptable response ti
 <li>To see whether an SLM could deliver satisfying results</li>
 <li>To write <em>boilerplate</em> code (the part highlighted in purple in the diagram) for the design of <a href="https://github.com/carmelolg/OAIA">OAIA - OrchestrAI Architecture</a>, a reusable template for future projects.</li>
 </ul>
-<p><figure>
-    <img loading="lazy" src="static/totchef-arch.png"
-         alt="Agentic TotChef Architecture"/> 
-</figure>
-
-<figure>
-    <img loading="lazy" src="images/totchef-arch.png"
-         alt="Agentic TotChef Architecture"/> 
-</figure>
-</p>
 <p><img alt="Agentic TotChef Architecture" loading="lazy" src="https://github.com/carmelolg/it-is-worth-a-coke/blob/925a8ed5780db0abd3cb9e282680add8cfec3eea/content/posts/%5BAI%5D%20Agentic%20Flow%20Architecture/totchef-arch.png?raw=true"></p>
 <p>The most interesting part of this tiny software architecture is the file <strong>Runner</strong>, highlighted in the green box on the right: it shows all the calls to <strong>qwen3‑8b</strong> and the interactions between the various agents.</p>
 <p>In particular, you can clearly see how the <strong>Prompt Chaining</strong> design pattern is used to split the complex task of generating a weekly menu into a sequence of simpler steps, each implemented by a dedicated AI agent.</p>
