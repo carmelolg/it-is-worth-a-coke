@@ -9,7 +9,7 @@
 <meta name="keywords" content="AI, GenAI, Agent, Ollama, Python">
 <meta name="description" content="This article explores software architecture, design patterns, and best practices for building scalable and maintainable AI agents, using a case study called &#39;TotChef&#39; that generates weekly menus for a 1‑year‑old baby.">
 <meta name="author" content="carmelolg">
-<link rel="canonical" href="https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/ai-agentic-flow-architecture_english/">
+<link rel="canonical" href="https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/">
 <link crossorigin="anonymous" href="/it-is-worth-a-coke/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://carmelolg.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://carmelolg.github.io/it-is-worth-a-coke/favicon-16x16.png">
@@ -18,7 +18,7 @@
 <link rel="mask-icon" href="https://carmelolg.github.io/it-is-worth-a-coke/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/ai-agentic-flow-architecture_english/">
+<link rel="alternate" hreflang="en" href="https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/">
 <noscript>
     <style>
         #theme-toggle,
@@ -70,7 +70,7 @@
         document.querySelector("html").dataset.theme = 'light';
     }
 
-</script><meta property="og:url" content="https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/ai-agentic-flow-architecture_english/">
+</script><meta property="og:url" content="https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/">
   <meta property="og:site_name" content="It&#39;s worth a Coke">
   <meta property="og:title" content="Agentic TotChef: Software Architectures, Patterns, and Best Practices">
   <meta property="og:description" content="This article explores software architecture, design patterns, and best practices for building scalable and maintainable AI agents, using a case study called &#39;TotChef&#39; that generates weekly menus for a 1‑year‑old baby.">
@@ -106,7 +106,7 @@
       "@type": "ListItem",
       "position":  2 ,
       "name": "Agentic TotChef: Software Architectures, Patterns, and Best Practices",
-      "item": "https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/ai-agentic-flow-architecture_english/"
+      "item": "https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/"
     }
   ]
 }
@@ -132,7 +132,7 @@
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/ai-agentic-flow-architecture_english/"
+    "@id": "https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/"
   },
   "publisher": {
     "@type": "Organization",
@@ -277,11 +277,16 @@ Still, it was enough to achieve a satisfying outcome with acceptable response ti
 <li>To see whether an SLM could deliver satisfying results</li>
 <li>To write <em>boilerplate</em> code (the part highlighted in purple in the diagram) for the design of <a href="https://github.com/carmelolg/OAIA">OAIA - OrchestrAI Architecture</a>, a reusable template for future projects.</li>
 </ul>
-<figure>
-    <img loading="lazy" src="../totchef-arch.png"
+<p><figure>
+    <img loading="lazy" src="static/totchef-arch.png"
          alt="Agentic TotChef Architecture"/> 
 </figure>
 
+<figure>
+    <img loading="lazy" src="images/totchef-arch.png"
+         alt="Agentic TotChef Architecture"/> 
+</figure>
+</p>
 <p><img alt="Agentic TotChef Architecture" loading="lazy" src="https://github.com/carmelolg/it-is-worth-a-coke/blob/925a8ed5780db0abd3cb9e282680add8cfec3eea/content/posts/%5BAI%5D%20Agentic%20Flow%20Architecture/totchef-arch.png?raw=true"></p>
 <p>The most interesting part of this tiny software architecture is the file <strong>Runner</strong>, highlighted in the green box on the right: it shows all the calls to <strong>qwen3‑8b</strong> and the interactions between the various agents.</p>
 <p>In particular, you can clearly see how the <strong>Prompt Chaining</strong> design pattern is used to split the complex task of generating a weekly menu into a sequence of simpler steps, each implemented by a dedicated AI agent.</p>
