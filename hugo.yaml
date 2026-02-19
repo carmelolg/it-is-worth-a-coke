@@ -82,10 +82,10 @@ params:
   images: ["images/Tokio.jpeg"]
 
   homeInfoParams:
-    title: "It's worth a Coke"
+    title: "`> tech blog`"
     Content: >
       Let me vent about the marvelous world of **computer science**. <br/>
-      Technical blog of <a href="https://github.com/carmelolg" target="_blank">carmelolg</a>.
+      Technical blog of <a style="color: #c41e3a" href="https://github.com/carmelolg" target="_blank">carmelolg</a>.
 
   socialIcons:
     - name: github
@@ -109,7 +109,7 @@ params:
 
   assets:
     disableHLJS: true
-  #     favicon: "<link / abs url>"
+    favicon: "/favicon.ico"
   #     favicon16x16: "<link / abs url>"
   #     favicon32x32: "<link / abs url>"
   #     apple_touch_icon: "<link / abs url>"
