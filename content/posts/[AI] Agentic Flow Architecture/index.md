@@ -9,7 +9,7 @@ tags: [AI, GenAI, Agent, Ollama, Python]
 
 AI-assisted source code development is now growing at an exponential pace.
 The capabilities of LLMs provided by various vendors make it possible, even in [Zero-Shot Learning](https://www.promptingguide.ai/techniques/zeroshot) mode, to generate high-quality source code with a remarkable level of abstraction and complexity.
-The results—surprisingly good, in my opinion—come from using so‑called **AI Agents** (in [ReAct](https://www.promptingguide.ai/techniques/react) mode and supported by [MCP Servers](https://modelcontextprotocol.io/docs/getting-started/intro)), which significantly boost developer productivity.
+The results, surprisingly good in my opinion, come from using so‑called **AI Agents** (in [ReAct](https://www.promptingguide.ai/techniques/react) mode and supported by [MCP Servers](https://modelcontextprotocol.io/docs/getting-started/intro)), which significantly boost developer productivity.
 
 But let’s pause for a moment. While the world is overflowing with enthusiasm and expectations, it is important to remember that source code generation by an LLM (agentic or not) 
 **is only one part of the software development process**. The demand for Software Architects will remain high, precisely to avoid building software 
