@@ -9,24 +9,17 @@
       <url>https://carmelolg.github.io/it-is-worth-a-coke/images/Tokio.jpeg</url>
       <link>https://carmelolg.github.io/it-is-worth-a-coke/images/Tokio.jpeg</link>
     </image>
-    <generator>Hugo -- 0.155.3</generator>
+    <generator>Hugo -- 0.156.0</generator>
     <language>en-EN</language>
     <copyright>carmelolg</copyright>
     <lastBuildDate>Mon, 16 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://carmelolg.github.io/it-is-worth-a-coke/tags/agent/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Agentic TotChef: Architetture software, Patterns, and Best Practices</title>
-      <link>https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/ai-agentic-flow-architecture_italian/</link>
-      <pubDate>Mon, 16 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/ai-agentic-flow-architecture_italian/</guid>
-      <description>L&amp;#39;articolo esplora l&amp;#39;architettura software, i design pattern e le best practice per progettare agenti AI scalabili e manutenibili, utilizzando un caso di studio chiamato &amp;#39;TotChef&amp;#39; che genera menù settimanali per una bambina di 1 anno.</description>
-    </item>
-    <item>
       <title>Agentic TotChef: Software Architectures, Patterns, and Best Practices</title>
       <link>https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/ai-agentic-flow-architecture_english/</link>
       <pubDate>Mon, 16 Feb 2026 00:00:00 +0000</pubDate>
       <guid>https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/ai-agentic-flow-architecture_english/</guid>
-      <description>The article explores software architecture, design patterns, and best practices for designing scalable and maintainable AI agents, using a case study called &amp;#39;TotChef&amp;#39; which generates weekly menus for a 1-year-old child.</description>
+      <description>This article explores software architecture, design patterns, and best practices for building scalable and maintainable AI agents, using a case study called &amp;#39;TotChef&amp;#39; that generates weekly menus for a 1‑year‑old baby.</description>
     </item>
   </channel>
 </rss>
