@@ -241,7 +241,7 @@ This experiment helped me identify both the strengths and limitations of these p
 
 In particular, the **Prompt Chaining** pattern proved effective in breaking down a complex task into a sequence of more manageable steps, each handled by a specialized agent. The **Parallelization** pattern, on the other hand, made it possible to execute two independent steps simultaneously, boosting performance and noticeably reducing response time.
 
-The resulting speedup achieved through this architecture was significant — around 1.5× for this use case — considering that only the two most demanding steps were run in parallel. Previous implementations, which lacked a clear separation of responsibilities and relied on monolithic agents, instead showed undesired behaviors like infinite loops and hallucinations.
+The resulting speedup achieved through this architecture was significant (around 1.5× for this use case) considering that only the two most demanding steps were run in parallel. Previous implementations, which lacked a clear separation of responsibilities and relied on monolithic agents, instead showed undesired behaviors like infinite loops and hallucinations.
 
 For the development of [Agentic TotChef](https://github.com/org-carmelolg-private-labs/agentic-totchef), I used Python, but *agentic design patterns* are language-agnostic concepts that can be applied to any type of agent or AI model.
 
