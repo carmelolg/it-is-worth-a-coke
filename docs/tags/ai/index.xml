@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>It&#39;s worth a Coke</title>
-    <link>https://carmelolg.github.io/it-is-worth-a-coke/</link>
-    <description>Recent content on It&#39;s worth a Coke</description>
+    <title>AI on It&#39;s worth a Coke</title>
+    <link>https://carmelolg.github.io/it-is-worth-a-coke/tags/ai/</link>
+    <description>Recent content in AI on It&#39;s worth a Coke</description>
     <image>
       <title>It&#39;s worth a Coke</title>
       <url>https://carmelolg.github.io/it-is-worth-a-coke/images/Tokio.jpeg</url>
@@ -13,20 +13,13 @@
     <language>en-EN</language>
     <copyright>carmelolg</copyright>
     <lastBuildDate>Sun, 22 Feb 2026 20:00:00 +0000</lastBuildDate>
-    <atom:link href="https://carmelolg.github.io/it-is-worth-a-coke/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://carmelolg.github.io/it-is-worth-a-coke/tags/ai/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Agentic TotChef: Software Architectures, Patterns, and Best Practices</title>
       <link>https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/</link>
       <pubDate>Sun, 22 Feb 2026 20:00:00 +0000</pubDate>
       <guid>https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/</guid>
       <description>This article explores software architecture, design patterns, and best practices for building scalable and maintainable AI agents, using a case study called &amp;#39;TotChef&amp;#39; that generates weekly menus for a 1‑year‑old baby.</description>
-    </item>
-    <item>
-      <title>The Revelation of Taylor’s Polynomial</title>
-      <link>https://carmelolg.github.io/it-is-worth-a-coke/posts/intro-it-is-worth-a-coke/</link>
-      <pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://carmelolg.github.io/it-is-worth-a-coke/posts/intro-it-is-worth-a-coke/</guid>
-      <description>You&amp;#39;re going to discover why this blog exists</description>
     </item>
   </channel>
 </rss>

@@ -12,8 +12,15 @@
     <generator>Hugo -- 0.156.0</generator>
     <language>en-EN</language>
     <copyright>carmelolg</copyright>
-    <lastBuildDate>Sun, 01 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Feb 2026 20:00:00 +0000</lastBuildDate>
     <atom:link href="https://carmelolg.github.io/it-is-worth-a-coke/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Agentic TotChef: Software Architectures, Patterns, and Best Practices</title>
+      <link>https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/</link>
+      <pubDate>Sun, 22 Feb 2026 20:00:00 +0000</pubDate>
+      <guid>https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/</guid>
+      <description>This article explores software architecture, design patterns, and best practices for building scalable and maintainable AI agents, using a case study called &amp;#39;TotChef&amp;#39; that generates weekly menus for a 1‑year‑old baby.</description>
+    </item>
     <item>
       <title>The Revelation of Taylor’s Polynomial</title>
       <link>https://carmelolg.github.io/it-is-worth-a-coke/posts/intro-it-is-worth-a-coke/</link>
