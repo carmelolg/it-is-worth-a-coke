@@ -2,32 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://carmelolg.github.io/it-is-worth-a-coke/tags/agent/</loc>
-    <lastmod>2026-02-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/</loc>
-    <lastmod>2026-02-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://carmelolg.github.io/it-is-worth-a-coke/tags/ai/</loc>
-    <lastmod>2026-02-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://carmelolg.github.io/it-is-worth-a-coke/tags/genai/</loc>
-    <lastmod>2026-02-16T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://carmelolg.github.io/it-is-worth-a-coke/</loc>
-    <lastmod>2026-02-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://carmelolg.github.io/it-is-worth-a-coke/tags/ollama/</loc>
-    <lastmod>2026-02-16T00:00:00+00:00</lastmod>
+    <lastmod>2026-02-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://carmelolg.github.io/it-is-worth-a-coke/posts/</loc>
-    <lastmod>2026-02-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://carmelolg.github.io/it-is-worth-a-coke/tags/python/</loc>
-    <lastmod>2026-02-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://carmelolg.github.io/it-is-worth-a-coke/tags/</loc>
-    <lastmod>2026-02-16T00:00:00+00:00</lastmod>
+    <lastmod>2026-02-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://carmelolg.github.io/it-is-worth-a-coke/posts/intro-it-is-worth-a-coke/</loc>
     <lastmod>2026-02-01T00:00:00+00:00</lastmod>
@@ -39,5 +18,7 @@
     <loc>https://carmelolg.github.io/it-is-worth-a-coke/search/</loc>
   </url><url>
     <loc>https://carmelolg.github.io/it-is-worth-a-coke/series/</loc>
+  </url><url>
+    <loc>https://carmelolg.github.io/it-is-worth-a-coke/tags/</loc>
   </url>
 </urlset>

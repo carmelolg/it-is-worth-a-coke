@@ -12,42 +12,6 @@
     <generator>Hugo -- 0.156.0</generator>
     <language>en-EN</language>
     <copyright>carmelolg</copyright>
-    <lastBuildDate>Mon, 16 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://carmelolg.github.io/it-is-worth-a-coke/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Agent</title>
-      <link>https://carmelolg.github.io/it-is-worth-a-coke/tags/agent/</link>
-      <pubDate>Mon, 16 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://carmelolg.github.io/it-is-worth-a-coke/tags/agent/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>AI</title>
-      <link>https://carmelolg.github.io/it-is-worth-a-coke/tags/ai/</link>
-      <pubDate>Mon, 16 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://carmelolg.github.io/it-is-worth-a-coke/tags/ai/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>GenAI</title>
-      <link>https://carmelolg.github.io/it-is-worth-a-coke/tags/genai/</link>
-      <pubDate>Mon, 16 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://carmelolg.github.io/it-is-worth-a-coke/tags/genai/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Ollama</title>
-      <link>https://carmelolg.github.io/it-is-worth-a-coke/tags/ollama/</link>
-      <pubDate>Mon, 16 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://carmelolg.github.io/it-is-worth-a-coke/tags/ollama/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Python</title>
-      <link>https://carmelolg.github.io/it-is-worth-a-coke/tags/python/</link>
-      <pubDate>Mon, 16 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://carmelolg.github.io/it-is-worth-a-coke/tags/python/</guid>
-      <description></description>
-    </item>
   </channel>
 </rss>
