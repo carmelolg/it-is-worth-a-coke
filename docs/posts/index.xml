@@ -21,5 +21,12 @@
       <guid>https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/</guid>
       <description>This article explores software architecture, design patterns, and best practices for building scalable and maintainable AI agents, using a case study called &amp;#39;TotChef&amp;#39; that generates weekly menus for a 1‑year‑old baby.</description>
     </item>
+    <item>
+      <title>The Revelation of Taylor’s Polynomial</title>
+      <link>https://carmelolg.github.io/it-is-worth-a-coke/posts/intro-it-is-worth-a-coke/</link>
+      <pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://carmelolg.github.io/it-is-worth-a-coke/posts/intro-it-is-worth-a-coke/</guid>
+      <description>You&amp;#39;re going to discover why this blog exists</description>
+    </item>
   </channel>
 </rss>

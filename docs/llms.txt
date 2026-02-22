@@ -2,3 +2,4 @@
 
 ## Posts
 - [Agentic TotChef: Software Architectures, Patterns, and Best Practices](https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/)
+- [The Revelation of Taylor’s Polynomial](https://carmelolg.github.io/it-is-worth-a-coke/posts/intro-it-is-worth-a-coke/)
