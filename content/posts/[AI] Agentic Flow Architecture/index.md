@@ -1,6 +1,6 @@
 ---
 title: "Agentic TotChef: Software Architectures, Patterns, and Best Practices"
-date: 2026-02-16T00:00:00+00:00
+date: 2026-02-22T23:30:00+00:00
 description: "This article explores software architecture, design patterns, and best practices for building scalable and maintainable AI agents, using a case study called 'TotChef' that generates weekly menus for a 1‑year‑old baby."
 tags: [AI, GenAI, Agent, Ollama, Python]
 ---
