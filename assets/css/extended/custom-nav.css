@@ -1,0 +1,148 @@
+/* =====================================================
+   HEADER — Sticky with backdrop blur
+   ===================================================== */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    /* Semi-transparent so the blur shows through */
+    background: color-mix(in srgb, var(--theme) 88%, transparent);
+    backdrop-filter: blur(12px) saturate(160%);
+    -webkit-backdrop-filter: blur(12px) saturate(160%);
+    /* Subtle separator */
+    border-bottom: 1px solid color-mix(in srgb, var(--border) 60%, transparent);
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+/* Logo in accent colour */
+.logo a {
+    color: var(--accent);
+}
+
+/* Nav link hover: accent underline grows from left */
+#menu a {
+    position: relative;
+    padding-bottom: 2px;
+}
+
+#menu a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.2s ease;
+}
+
+#menu a:hover::after {
+    width: 100%;
+}
+
+/* Active page: use accent instead of currentColor */
+#menu .active {
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+}
+
+/* =====================================================
+   FOOTER — Accent top rule + hover accent on links
+   ===================================================== */
+
+.footer {
+    border-top: 1px solid color-mix(in srgb, var(--accent) 35%, var(--border));
+    padding-top: calc(var(--gap) * 1.2);
+}
+
+.footer a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+/* "Back to top" button — accent on hover */
+.top-link:hover {
+    background: var(--accent);
+    color: #fff;
+}
+
+/* =====================================================
+   TAGS / TERMS PAGE — Accent pill hover
+   ===================================================== */
+
+/* Default tag pill: bordered */
+.terms-tags a {
+    background: var(--entry);
+    border: 1px solid var(--border);
+    color: var(--primary);
+    padding: 4px 14px;
+    border-radius: 20px;           /* fully rounded pill */
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: background 0.15s ease, border-color 0.15s ease,
+                color 0.15s ease, transform 0.15s ease,
+                box-shadow 0.15s ease;
+}
+
+/* Hover: fill with accent */
+.terms-tags a:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+/* Press feedback */
+.terms-tags a:active {
+    transform: scale(0.96);
+}
+
+/* Post-level tags (footer of single post) — accent on hover too */
+.post-tags a:hover {
+    background: color-mix(in srgb, var(--accent) 12%, var(--code-bg));
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* =====================================================
+   SEARCH PAGE — Accent focus ring + result cards
+   ===================================================== */
+
+#searchbox input {
+    padding: 8px 14px;
+    font-size: 1rem;
+    font-weight: 400;
+    border: 2px solid var(--border);
+    background: var(--entry);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#searchbox input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent);
+    outline: none;
+}
+
+/* Result items — match post-entry card style */
+#searchResults li {
+    background: var(--entry);
+    border: 1px solid var(--border);
+    margin: 10px 0;
+    padding: 12px 16px;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease,
+                transform 0.15s ease;
+}
+
+#searchResults li:hover,
+#searchResults .focus {
+    border-color: color-mix(in srgb, var(--accent) 55%, var(--border));
+    box-shadow: 0 4px 16px color-mix(in srgb, var(--primary) 7%, transparent),
+                inset 3px 0 0 var(--accent);
+    transform: translateY(-1px);
+}
+
+#searchResults li:active {
+    transform: scale(0.98);
+}
