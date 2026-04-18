@@ -31,6 +31,9 @@ languages:
       series: series
     menu:
       main:
+        - name: Home
+          url: ""
+          weight: 1
         - name: Search
           url: search/
           weight: 5
@@ -40,9 +43,6 @@ languages:
         - name: Tags
           url: tags/
           weight: 15
-        - name: Who I am
-          url: https://carmelolg.github.io/
-          weight: 20
 
 outputFormats:
   llms:
@@ -82,7 +82,7 @@ params:
   images: ["images/Tokio.jpeg"]
 
   homeInfoParams:
-    title: "`> tech blog`"
+    title: "`> It's worth a Coke`"
     Content: >
       Let me vent about the marvelous world of **computer science**. <br/>
       Software architecture, AI, design patterns — and everything that makes me stop and say: <em>this is worth a Coke</em>. <br/>

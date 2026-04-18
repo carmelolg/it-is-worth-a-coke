@@ -1,0 +1,86 @@
+/* =====================================================
+   FOOTER — Multi-column grid layout
+   Adapted from the chords site footer style,
+   using the existing blog theme & colour variables.
+   ===================================================== */
+
+.footer.footer-nav {
+    padding: 2.5rem 1.5rem 1.25rem;
+    border-top: 1px solid var(--border);
+    max-width: var(--main-width, 860px);
+    margin: 0 auto;
+    font-size: 0.875rem;
+    text-align: left;
+    line-height: 1.6;
+}
+
+/* --- Grid of columns -------------------------------- */
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-col-title {
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--secondary);
+    margin: 0 0 0.75rem;
+}
+
+.footer-col ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.footer-col ul li a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.footer-col ul li a:hover {
+    color: var(--accent);
+}
+
+/* --- Bottom bar ------------------------------------- */
+.footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.4rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+    color: var(--secondary);
+    font-size: 0.78rem;
+}
+
+.footer-bottom a {
+    color: var(--secondary);
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.footer-bottom a:hover {
+    color: var(--accent);
+}
+
+/* --- Mobile: stack to single column ----------------- */
+@media (max-width: 480px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
