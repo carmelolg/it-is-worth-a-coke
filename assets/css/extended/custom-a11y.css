@@ -1,0 +1,194 @@
+/* =====================================================
+   SCROLL PADDING
+   With our sticky header (--header-height: 60px), anchor
+   targets are hidden behind it. scroll-padding-top
+   ensures they land below the header with extra breathing
+   room.
+   ===================================================== */
+
+:root {
+    scroll-padding-top: calc(var(--header-height) + 24px);
+}
+
+/* =====================================================
+   FOCUS RINGS — extended coverage
+   custom-colors.css covers a/button/:root globally.
+   Here we add more specific rules for components added
+   in phases 2-5 that need tailored treatment.
+   ===================================================== */
+
+/* Nav links — visible ring with accent, matches underline style */
+.nav a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+/* Post entry cards — ring around the whole card */
+.post-entry:focus-within {
+    outline: 2px solid color-mix(in srgb, var(--accent) 40%, transparent);
+    outline-offset: 2px;
+    border-radius: var(--radius);
+}
+
+.post-entry a:focus-visible {
+    outline: none; /* card :focus-within handles it */
+}
+
+/* Paginav links */
+.paginav a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
+    border-radius: calc(var(--radius) - 2px);
+}
+
+/* Tag pills on posts and terms page */
+.post-tags a:focus-visible,
+.terms-tags a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 20px;
+}
+
+/* Table of Contents links */
+#TableOfContents a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Search input */
+#searchbox input:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 0;
+}
+
+/* Breadcrumb links */
+.breadcrumbs a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+/* =====================================================
+   PREFERS-REDUCED-MOTION
+   Respect the OS "reduce motion" preference.
+   Collapses all our transitions and animations to instant
+   without removing the visual states (hover colours, etc.)
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    /* Keep skip link functional but non-animated */
+    .skip-nav {
+        transition: none !important;
+    }
+
+    /* Disable post-entry lift transform */
+    .post-entry:hover {
+        transform: none !important;
+    }
+
+    /* Disable paginav lift */
+    .paginav a:hover {
+        transform: none !important;
+    }
+
+    /* Disable theme toggle rotation */
+    button#theme-toggle:hover {
+        transform: none !important;
+    }
+
+    /* Keep blur effect — it's not motion-related */
+}
+
+/* =====================================================
+   FORCED COLORS (Windows High Contrast)
+   When the OS overrides colours, ensure critical borders
+   and rings remain visible using CSS system keywords.
+   ===================================================== */
+
+@media (forced-colors: active) {
+    /* Ensure post-entry cards keep a visible border */
+    .post-entry {
+        border: 1px solid ButtonText;
+    }
+
+    /* Ensure tag pills keep border when background is removed */
+    .post-tags a,
+    .terms-tags a {
+        border: 1px solid ButtonText;
+        forced-color-adjust: none;
+        background: ButtonFace;
+        color: ButtonText;
+    }
+
+    /* Ensure paginav divider is visible */
+    .paginav {
+        border: 1px solid ButtonText;
+    }
+
+    /* Preserve accent on links where possible */
+    a,
+    .nav a {
+        color: LinkText;
+    }
+
+    /* Ensure skip link is visible */
+    .skip-nav {
+        forced-color-adjust: none;
+        background: Highlight;
+        color: HighlightText;
+        border: 2px solid ButtonText;
+    }
+}
+
+/* =====================================================
+   PRINT STYLES — minimal cleanup
+   ===================================================== */
+
+@media print {
+    /* Hide navigation chrome */
+    .header,
+    .footer,
+    #theme-toggle,
+    .top-link,
+    .skip-nav,
+    #searchbox {
+        display: none !important;
+    }
+
+    /* Remove decorative shadows/transitions */
+    * {
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    /* Ensure full-width content */
+    .main,
+    .post-single,
+    article {
+        max-width: 100% !important;
+    }
+
+    /* Show link URLs inline */
+    .post-content a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.75em;
+        color: #555;
+    }
+
+    /* But not for internal / icon links */
+    .post-content a[href^="#"]::after,
+    .post-content a:has(img)::after {
+        content: none;
+    }
+}
