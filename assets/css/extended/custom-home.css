@@ -1,0 +1,61 @@
+/* =====================================================
+   HOMEPAGE HERO — Custom home info section
+   ===================================================== */
+
+/* Card-like treatment with accent left border */
+.home-info {
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: var(--radius);
+    padding: calc(var(--gap) * 1.5);
+    min-height: unset;      /* override first-entry's 320px */
+    justify-content: flex-start;
+    margin-bottom: calc(var(--gap) * 2.5);
+}
+
+/* Unclamp the header — it's not a post preview, it's a hero */
+.home-info .entry-header {
+    overflow: visible;
+    display: block;
+    -webkit-line-clamp: unset;
+}
+
+/* Hero title spacing */
+.home-info .entry-header h1 {
+    margin-bottom: 0;
+    line-height: 1.2;
+}
+
+/* Hero description text */
+.home-info .entry-content {
+    font-size: 1.0625rem;
+    color: var(--content);
+    line-height: 1.75;
+    margin: 18px 0 0;
+    -webkit-line-clamp: unset;
+}
+
+/* Divider above social icons */
+.home-info .entry-footer {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    font-size: 14px;
+}
+
+/* Slightly larger social icons in hero */
+.home-info .social-icons a svg {
+    height: 22px;
+    width: 22px;
+}
+
+/* =====================================================
+   POST LIST SECTION — Spacing and section header
+   ===================================================== */
+
+/* "Posts" section heading if present */
+.page-header h1 {
+    font-size: 2rem;
+    margin-bottom: var(--gap);
+}

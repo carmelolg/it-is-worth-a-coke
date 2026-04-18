@@ -1,0 +1,48 @@
+/* =====================================================
+   POST ENTRY CARDS — Hover effects & visual polish
+   ===================================================== */
+
+/* Smooth transitions on the card itself */
+.post-entry {
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover: lift + left accent stripe */
+.post-entry:hover {
+    border-color: color-mix(in srgb, var(--accent) 55%, var(--border));
+    box-shadow:
+        0 6px 24px color-mix(in srgb, var(--primary) 7%, transparent),
+        inset 3px 0 0 var(--accent);
+    transform: translateY(-2px);
+}
+
+/* Press feedback */
+.post-entry:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* Title colour shift on hover */
+.post-entry:hover .entry-header h2 {
+    color: var(--accent);
+    transition: color 0.2s ease;
+}
+
+/* Show 3 lines of summary instead of 2 — our hand-crafted
+   summaries are long enough to benefit from the extra line */
+.entry-content {
+    -webkit-line-clamp: 3;
+    line-height: 1.65;
+}
+
+/* Entry footer: date + reading time */
+.entry-footer {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Tag-entry variant: no accent left stripe */
+.tag-entry:hover {
+    box-shadow: 0 4px 16px color-mix(in srgb, var(--primary) 7%, transparent);
+}
