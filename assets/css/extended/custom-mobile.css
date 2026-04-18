@@ -1,0 +1,289 @@
+/* =====================================================
+   MOBILE REFINEMENTS
+   Breakpoints used (matching PaperMod's zmedia.css):
+     768px — main mobile breakpoint
+     600px — small phones / landscape
+     480px — narrow phones
+     340px — tiny screens
+   ===================================================== */
+
+/* =====================================================
+   HEADER — compact height on small screens
+   ===================================================== */
+
+@media screen and (max-width: 768px) {
+    :root {
+        --header-height: 52px;
+        /* Tighten scroll-padding-top to match reduced header */
+        scroll-padding-top: calc(52px + 16px);
+    }
+
+    .header {
+        min-height: var(--header-height);
+    }
+
+    /* Slightly smaller logo text on mobile */
+    .logo a {
+        font-size: 1rem;
+    }
+}
+
+/* =====================================================
+   FLUID TYPOGRAPHY — headings scale with viewport
+   ===================================================== */
+
+@media screen and (max-width: 768px) {
+    /* Post title h1 */
+    .post-single .post-title,
+    .post-title {
+        font-size: clamp(1.5rem, 6vw, 2.25rem);
+        line-height: 1.2;
+    }
+
+    /* List/home entry titles */
+    .post-entry h2,
+    .entry-header h2 {
+        font-size: clamp(1.1rem, 4.5vw, 1.4rem);
+    }
+
+    /* Post body headings */
+    .post-content h2 { font-size: clamp(1.2rem, 4.5vw, 1.6rem); }
+    .post-content h3 { font-size: clamp(1.05rem, 3.5vw, 1.3rem); }
+    .post-content h4 { font-size: 1rem; }
+
+    /* Body text — slightly looser leading on narrow screens */
+    .post-content {
+        font-size: 1rem;
+        line-height: 1.75;
+    }
+}
+
+/* =====================================================
+   HERO CARD — compact spacing on mobile
+   ===================================================== */
+
+@media screen and (max-width: 768px) {
+    .home-info {
+        padding: 20px 16px;
+        border-left-width: 3px;     /* slimmer accent stripe */
+    }
+
+    .home-info .entry-header {
+        margin-bottom: 8px;
+    }
+}
+
+/* =====================================================
+   POST ENTRY CARDS — full-width, comfortable tap targets
+   ===================================================== */
+
+@media screen and (max-width: 768px) {
+    /* Remove the hover lift on touch devices (no hover) */
+    .post-entry:hover {
+        transform: none;
+    }
+
+    /* Ensure the card occupies enough vertical space to tap */
+    .post-entry {
+        padding: 16px 18px;
+    }
+
+    /* Post meta and tags should wrap gracefully */
+    .post-meta {
+        flex-wrap: wrap;
+        gap: 4px 8px;
+        font-size: 0.8rem;
+    }
+
+    /* Remove the pseudo-element dot separator that can break wrapping */
+    .post-meta > span + span::before {
+        margin: 0 4px;
+    }
+}
+
+/* =====================================================
+   TAG PILLS — min tap target height of 44px (WCAG 2.5.5)
+   ===================================================== */
+
+@media screen and (max-width: 768px) {
+    .post-tags a,
+    .terms-tags a {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        padding: 6px 14px;
+        font-size: 0.8125rem;
+    }
+}
+
+/* =====================================================
+   TABLE OF CONTENTS — compact + tap-friendly on mobile
+   ===================================================== */
+
+@media screen and (max-width: 768px) {
+    .toc {
+        font-size: 0.875rem;
+        padding: 10px 14px;
+    }
+
+    /* summary toggle — bigger tap target */
+    .toc details > summary {
+        padding: 8px 0;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Tighten up link spacing inside ToC */
+    #TableOfContents ul {
+        padding-inline-start: 16px;
+    }
+
+    #TableOfContents li {
+        margin: 4px 0;
+    }
+}
+
+/* =====================================================
+   CODE BLOCKS — horizontal scroll, no overflow
+   ===================================================== */
+
+@media screen and (max-width: 768px) {
+    .post-content pre,
+    .highlight pre {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        /* Prevent very long unbreakable tokens from stretching layout */
+        word-break: normal;
+        white-space: pre;
+        font-size: 0.8125rem;  /* slightly smaller on mobile */
+        border-radius: 6px;
+    }
+
+    /* Inline code — allow wrapping on very narrow screens */
+    .post-content p code,
+    .post-content li code {
+        word-break: break-word;
+    }
+}
+
+/* =====================================================
+   TABLES — horizontal scroll on mobile
+   The .post-content table is not wrapped in a div, so
+   we simulate overflow scrolling on the table itself.
+   ===================================================== */
+
+@media screen and (max-width: 768px) {
+    .post-content table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        max-width: 100%;
+        font-size: 0.875rem;
+    }
+
+    /* Keep thead/tbody/tr as they are when table is display:block */
+    .post-content thead,
+    .post-content tbody,
+    .post-content tr {
+        display: table;
+        width: 100%;
+    }
+}
+
+/* =====================================================
+   PREV / NEXT PAGINAV — stack vertically on mobile
+   ===================================================== */
+
+@media screen and (max-width: 600px) {
+    .paginav {
+        flex-direction: column;
+    }
+
+    /* Remove the vertical divider — replace with horizontal rule */
+    .paginav .prev {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .paginav .prev,
+    .paginav .next {
+        width: 100%;
+    }
+
+    .paginav .next {
+        text-align: left;        /* left-align both items when stacked */
+    }
+
+    .paginav a {
+        min-height: 60px;
+    }
+}
+
+/* =====================================================
+   NAVIGATION LINKS — full-width tap targets on mobile
+   ===================================================== */
+
+@media screen and (max-width: 768px) {
+    .nav a {
+        padding: 8px 4px;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+    }
+}
+
+/* =====================================================
+   BREADCRUMBS — wrap on very narrow screens
+   ===================================================== */
+
+@media screen and (max-width: 480px) {
+    .breadcrumbs {
+        flex-wrap: wrap;
+        gap: 2px 6px;
+        font-size: 0.75rem;
+    }
+}
+
+/* =====================================================
+   POST SHARE BUTTONS — center on mobile
+   ===================================================== */
+
+@media screen and (max-width: 480px) {
+    .share-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+}
+
+/* =====================================================
+   BACK TO TOP BUTTON — avoid overlap with content
+   ===================================================== */
+
+@media screen and (max-width: 768px) {
+    .top-link {
+        bottom: 16px;
+        right: 16px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* =====================================================
+   TINY SCREENS (≤340px) — last resort adjustments
+   ===================================================== */
+
+@media screen and (max-width: 340px) {
+    :root {
+        --gap: 10px;
+    }
+
+    .post-content {
+        font-size: 0.9375rem;
+    }
+
+    .post-content pre {
+        font-size: 0.75rem;
+    }
+}
