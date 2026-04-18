@@ -1,0 +1,99 @@
+/* =====================================================
+   CUSTOM TYPOGRAPHY — It's worth a Coke
+   Body: Inter  |  Code/Mono: JetBrains Mono
+   ===================================================== */
+
+/* --- Font Families --------------------------------- */
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+code,
+pre,
+kbd,
+samp,
+.highlight {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+    font-feature-settings: "liga" 1, "calt" 1;
+}
+
+/* --- Heading Refinements --------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+}
+
+/* Post title */
+.post-title {
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+/* Homepage hero title */
+.home-info .entry-header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+/* List page section heading */
+.page-header h1 {
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+/* Post card entry titles */
+.entry-header h2 {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+/* --- Body Text ------------------------------------- */
+
+.post-content {
+    font-size: 1.0625rem;  /* 17px — slightly tighter than theme default 18px for Inter */
+    line-height: 1.75;
+    letter-spacing: -0.003em;
+}
+
+/* --- Inline Code ----------------------------------- */
+
+.post-content code {
+    font-size: 0.82em;
+    font-weight: 500;
+    padding: 2px 6px;
+    border-radius: 4px;
+    letter-spacing: 0;
+}
+
+/* --- Code Block ------------------------------------ */
+
+.post-content pre code {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+/* --- Post Meta (dates, reading time) --------------- */
+
+.post-meta,
+.entry-footer {
+    font-size: 0.8125rem;
+    letter-spacing: 0.01em;
+}
+
+/* --- Navigation ------------------------------------ */
+
+.nav a,
+#menu a {
+    letter-spacing: 0.01em;
+}
+
+.logo a {
+    letter-spacing: -0.02em;
+}

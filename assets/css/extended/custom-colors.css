@@ -1,0 +1,138 @@
+/* =====================================================
+   CUSTOM COLOR PALETTE — It's worth a Coke
+   Accent: Coke-inspired red (#b22222 light / #f87171 dark)
+   Both variants pass WCAG AA 4.5:1 contrast ratio.
+   ===================================================== */
+
+/* --- Light Mode ------------------------------------ */
+:root {
+    --accent: #b22222;
+
+    --theme:          #fafaf8;   /* warm off-white page bg */
+    --entry:          #ffffff;   /* post card bg */
+    --primary:        #1c1c1e;   /* headings & body text */
+    --secondary:      #636366;   /* meta, dates, muted text */
+    --tertiary:       #d9d9d9;   /* dividers, hr */
+    --content:        #2c2c2e;   /* article body text */
+    --code-block-bg:  #1c1b2e;   /* fenced code block bg */
+    --code-bg:        #f5f5f3;   /* inline code bg */
+    --border:         #e5e5e5;   /* borders on cards, ToC */
+}
+
+/* --- Dark Mode ------------------------------------- */
+:root[data-theme="dark"] {
+    --accent: #f87171;           /* lighter red for dark bg (6.6:1 contrast) */
+
+    --theme:          #18181b;
+    --entry:          #1f1f23;
+    --primary:        #e4e4e7;
+    --secondary:      #a1a1aa;
+    --tertiary:       #3f3f46;
+    --content:        #d4d4d8;
+    --code-block-bg:  #0f0f1a;
+    --code-bg:        #27272a;
+    --border:         #3f3f46;
+}
+
+/* =====================================================
+   ACCENT COLOR APPLICATION
+   ===================================================== */
+
+/* Homepage hero: make the `> tech blog` code tag pop */
+.home-info .entry-header h1 code {
+    color: var(--accent);
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+}
+
+/* Author link on homepage hero (replaces inline style) */
+.home-info .entry-content a {
+    color: var(--accent);
+    text-decoration-color: var(--accent);
+}
+
+/* Post content links */
+.post-content a {
+    color: var(--accent);
+    box-shadow: none;
+    text-decoration: underline;
+    text-decoration-color: color-mix(in srgb, var(--accent) 40%, transparent);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.2s ease;
+}
+.post-content a:hover {
+    text-decoration-color: var(--accent);
+}
+
+/* Active nav item — use accent color */
+#menu .active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+/* Post tags — accent on hover */
+.post-tags a {
+    transition: color 0.15s ease, border-color 0.15s ease;
+}
+.post-tags a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 8%, var(--entry));
+}
+
+/* Terms/tags page */
+.terms-tags a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+/* Blockquote — accent left border */
+.post-content blockquote {
+    border-inline-start-color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 5%, transparent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 12px 14px;
+}
+
+/* Social icons hover */
+.social-icons a:hover {
+    color: var(--accent);
+    transform: scale(1.1);
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* Pagination buttons */
+.pagination a {
+    background: var(--accent);
+    transition: opacity 0.2s ease;
+}
+.pagination a:hover {
+    opacity: 0.85;
+}
+
+/* =====================================================
+   ACCESSIBILITY — Focus outlines
+   PaperMod removes outlines on theme-toggle and top-link;
+   we restore them using the accent color.
+   ===================================================== */
+
+a:focus-visible,
+button:focus-visible,
+#theme-toggle:focus-visible,
+.top-link:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+/* Override PaperMod's outline:0 on these specific elements */
+.top-link:focus,
+#theme-toggle:focus {
+    outline: revert;
+}
+.top-link:focus-visible,
+#theme-toggle:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}

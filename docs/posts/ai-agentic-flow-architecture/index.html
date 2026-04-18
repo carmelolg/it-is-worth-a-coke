@@ -10,7 +10,7 @@
 <meta name="description" content="This article explores software architecture, design patterns, and best practices for building scalable and maintainable AI agents, using a case study called &#39;TotChef&#39; that generates weekly menus for a 1‑year‑old baby.">
 <meta name="author" content="carmelolg">
 <link rel="canonical" href="https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/">
-<link crossorigin="anonymous" href="/it-is-worth-a-coke/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/it-is-worth-a-coke/assets/css/stylesheet.f91939ef40abfee3d2d5ca251fef51f7ee39cd95ac582b2f14ebcb355f35b61e.css" integrity="sha256-&#43;Rk570Cr/uPS1colH&#43;9R9&#43;45zZWsWCsvFOvLNV81th4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://carmelolg.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://carmelolg.github.io/it-is-worth-a-coke/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://carmelolg.github.io/it-is-worth-a-coke/favicon-32x32.png">
@@ -70,7 +70,10 @@
         document.querySelector("html").dataset.theme = 'light';
     }
 
-</script><meta property="og:url" content="https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/">
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<meta property="og:url" content="https://carmelolg.github.io/it-is-worth-a-coke/posts/ai-agentic-flow-architecture/">
   <meta property="og:site_name" content="It&#39;s worth a Coke">
   <meta property="og:title" content="Agentic TotChef: Software Architectures, Patterns, and Best Practices">
   <meta property="og:description" content="This article explores software architecture, design patterns, and best practices for building scalable and maintainable AI agents, using a case study called &#39;TotChef&#39; that generates weekly menus for a 1‑year‑old baby.">
@@ -207,17 +210,43 @@
 
 <article class="post-single">
   <header class="post-header">
-    
+    <div class="breadcrumbs"><a href="https://carmelolg.github.io/it-is-worth-a-coke/">Home</a>&nbsp;»&nbsp;<a href="https://carmelolg.github.io/it-is-worth-a-coke/posts/">Posts</a></div>
     <h1 class="post-title entry-hint-parent">
       Agentic TotChef: Software Architectures, Patterns, and Best Practices
     </h1>
     <div class="post-description">
       This article explores software architecture, design patterns, and best practices for building scalable and maintainable AI agents, using a case study called &#39;TotChef&#39; that generates weekly menus for a 1‑year‑old baby.
     </div>
-    <div class="post-meta"><span title='2026-02-22 20:00:00 +0000 UTC'>February 22, 2026</span>&nbsp;·&nbsp;<span>10 min</span>&nbsp;·&nbsp;<span>carmelolg</span>
+    <div class="post-meta"><span title='2026-02-22 20:00:00 +0000 +0000'>February 22, 2026</span>&nbsp;·&nbsp;<span>10 min</span>&nbsp;·&nbsp;<span>carmelolg</span>
 
 </div>
-  </header> 
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#introduction" aria-label="Introduction">Introduction</a></li>
+                <li>
+                    <a href="#goal" aria-label="Goal">Goal</a></li>
+                <li>
+                    <a href="#small-language-models-limits-and-benefits" aria-label="Small Language Models: limits and benefits">Small Language Models: limits and benefits</a></li>
+                <li>
+                    <a href="#agentic-design-patterns-what-they-are" aria-label="Agentic Design Patterns: what they are">Agentic Design Patterns: what they are</a></li>
+                <li>
+                    <a href="#agentic-totchef-software-architecture" aria-label="Agentic TotChef: software architecture">Agentic TotChef: software architecture</a></li>
+                <li>
+                    <a href="#agentic-totchef-code-snippet" aria-label="Agentic TotChef: code snippet">Agentic TotChef: code snippet</a></li>
+                <li>
+                    <a href="#conclusions" aria-label="Conclusions">Conclusions</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><h1 id="introduction">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction">#</a></h1>
 <p>AI-assisted source code development is now growing at an exponential pace.
 The capabilities of LLMs provided by various vendors make it possible, even in <a href="https://www.promptingguide.ai/techniques/zeroshot">Zero-Shot Learning</a> mode, to generate high-quality source code with a remarkable level of abstraction and complexity.

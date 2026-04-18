@@ -2,6 +2,7 @@
 title: "The Revelation of Taylor’s Polynomial"
 date: 2026-02-01T00:00:00+00:00
 description: "You're going to discover why this blog exists"
+summary: "A calculus professor, a blackboard, and a Coca-Cola. The story of the moment that shaped my entire career — and why some things are simply worth a Coke."
 tags: []
 ---
 It was the end of 2009. I was attending a calculus class at the Department of Mathematics and Computer Science at the University of Calabria.  

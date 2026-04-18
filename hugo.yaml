@@ -72,12 +72,12 @@ params:
   # disableSpecial1stPost: true
   displayFullLangName: false
   ShowPostNavLinks: true
-  ShowBreadCrumbs: false
+  ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
   ShowRssButtonInSectionTermList: true
   ShowAllPagesInArchive: true
   ShowPageNums: true
-  ShowToc: false
+  ShowToc: true
   # comments: false
   images: ["images/Tokio.jpeg"]
 
@@ -85,7 +85,7 @@ params:
     title: "`> tech blog`"
     Content: >
       Let me vent about the marvelous world of **computer science**. <br/>
-      Technical blog of <a style="color: #c41e3a" href="https://github.com/carmelolg" target="_blank">carmelolg</a>.
+      Technical blog of <a href="https://github.com/carmelolg" target="_blank">carmelolg</a>.
 
   socialIcons:
     - name: github
