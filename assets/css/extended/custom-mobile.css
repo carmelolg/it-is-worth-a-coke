@@ -71,6 +71,18 @@
     .home-info .entry-header {
         margin-bottom: 8px;
     }
+
+    /* Scale down the hero title so it fits on one line on most phones */
+    .home-info .entry-header h1 {
+        font-size: clamp(1.1rem, 5vw, 1.6rem);
+        line-height: 1.25;
+    }
+
+    /* Allow the <code> inside the hero h1 to wrap on narrow screens */
+    .home-info .entry-header h1 code {
+        white-space: normal;
+        word-break: break-word;
+    }
 }
 
 /* =====================================================
