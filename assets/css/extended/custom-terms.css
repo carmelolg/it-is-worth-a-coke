@@ -132,3 +132,111 @@
         font-size: 0.9375rem;
     }
 }
+
+/* =====================================================
+   TAG DETAIL PAGE — /tags/<name>/
+   ===================================================== */
+
+/* ── Back link ────────────────────────────────────── */
+
+.term-detail-header {
+    margin-bottom: 2rem;
+}
+
+.term-detail-back {
+    margin-bottom: 0.9rem;
+}
+
+.term-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--secondary);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    transition: color 0.15s ease, gap 0.15s ease;
+}
+
+.term-back-link:hover {
+    color: var(--accent);
+    gap: 0.55rem;
+}
+
+.term-back-link svg {
+    flex-shrink: 0;
+    transition: transform 0.15s ease;
+}
+
+.term-back-link:hover svg {
+    transform: translateX(-2px);
+}
+
+/* ── Title row ────────────────────────────────────── */
+
+.term-detail-main {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    flex-wrap: wrap;
+}
+
+.term-detail-title {
+    margin: 0;
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--primary);
+}
+
+.term-detail-hash {
+    color: var(--accent);
+    font-weight: 800;
+}
+
+/* ── Post count badge ─────────────────────────────── */
+
+.term-detail-count {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 12%, var(--entry));
+    border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--border));
+    border-radius: 999px;
+    padding: 0.2em 0.75em;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+/* ── RSS icon ─────────────────────────────────────── */
+
+.term-detail-rss {
+    display: inline-flex;
+    color: var(--secondary);
+    text-decoration: none;
+    margin-top: 0.5rem;
+    transition: color 0.15s ease;
+}
+
+.term-detail-rss:hover {
+    color: var(--accent);
+}
+
+/* ── Empty state ──────────────────────────────────── */
+
+.term-detail-empty {
+    color: var(--secondary);
+    font-size: 0.9rem;
+    padding: 2rem 0;
+}
+
+/* ── Mobile ───────────────────────────────────────── */
+
+@media (max-width: 600px) {
+    .term-detail-title {
+        font-size: 1.6rem;
+    }
+}
