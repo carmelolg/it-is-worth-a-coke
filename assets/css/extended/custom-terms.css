@@ -1,0 +1,134 @@
+/* =====================================================
+   TERMS / TAGS PAGE — Card grid redesign
+   ===================================================== */
+
+/* ── Page header ──────────────────────────────────── */
+
+.terms-page-header {
+    margin-bottom: 2rem;
+}
+
+.terms-summary {
+    font-size: 0.875rem;
+    color: var(--secondary);
+    margin: 6px 0 0;
+}
+
+.terms-summary-num {
+    font-weight: 600;
+    color: var(--accent);
+}
+
+/* ── Tag grid ─────────────────────────────────────── */
+
+.terms-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+/* ── Single tag card ──────────────────────────────── */
+
+.terms-card-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.6rem;
+    padding: 1.1rem 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius, 8px);
+    background: var(--entry);
+    text-decoration: none;
+    color: var(--primary);
+    transition:
+        border-color 0.2s ease,
+        box-shadow   0.2s ease,
+        transform    0.15s ease;
+    position: relative;
+    overflow: hidden;
+    min-height: 80px;
+}
+
+/* Accent bottom stripe — grows on hover */
+.terms-card-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.2s ease;
+}
+
+.terms-card-link:hover {
+    border-color: color-mix(in srgb, var(--accent) 55%, var(--border));
+    box-shadow:
+        0 6px 24px color-mix(in srgb, var(--primary) 7%, transparent),
+        inset 0 0 0 0 transparent;
+    transform: translateY(-3px);
+}
+
+.terms-card-link:hover::after {
+    transform: scaleX(1);
+}
+
+.terms-card-link:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+/* Tag name */
+.terms-card-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary);
+    line-height: 1.25;
+    transition: color 0.15s ease;
+    /* Prefix with # */
+}
+
+.terms-card-name::before {
+    content: '#';
+    color: var(--accent);
+    font-weight: 700;
+    margin-right: 1px;
+}
+
+.terms-card-link:hover .terms-card-name {
+    color: var(--accent);
+}
+
+/* Post count */
+.terms-card-meta {
+    font-size: 0.78rem;
+    color: var(--secondary);
+    font-variant-numeric: tabular-nums;
+    transition: color 0.15s ease;
+}
+
+.terms-card-link:hover .terms-card-meta {
+    color: color-mix(in srgb, var(--accent) 70%, var(--secondary));
+}
+
+/* ── Mobile ───────────────────────────────────────── */
+
+@media (max-width: 600px) {
+    .terms-grid {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        gap: 0.75rem;
+    }
+
+    .terms-card-link {
+        padding: 0.9rem 1rem;
+        min-height: 70px;
+    }
+
+    .terms-card-name {
+        font-size: 0.9375rem;
+    }
+}
