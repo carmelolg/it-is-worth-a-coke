@@ -1,5 +1,41 @@
 {{- define "main" }}
 
+{{- if eq .Kind "taxonomy" }}
+
+{{- /* ── Tags INDEX page (/tags/) — card grid ────────────── */}}
+{{- $totalPosts := len (where site.RegularPages "Section" "posts") }}
+{{- $totalTags  := len .Data.Terms }}
+
+<header class="page-header terms-page-header">
+    <h1>{{ .Title }}</h1>
+    <p class="terms-summary">
+        <span class="terms-summary-num">{{ $totalTags }}</span>
+        tag{{ if ne $totalTags 1 }}s{{ end }},
+        <span class="terms-summary-num">{{ $totalPosts }}</span>
+        post{{ if ne $totalPosts 1 }}s{{ end }}
+    </p>
+</header>
+
+<ul class="terms-grid" role="list">
+    {{- $type := .Type }}
+    {{- range .Data.Terms.ByCount.Reverse }}
+    {{- $count := .Count }}
+    {{- with site.GetPage (printf "/%s/%s" $type .Name) }}
+    <li class="terms-card">
+        <a href="{{ .Permalink }}" class="terms-card-link">
+            <span class="terms-card-name">{{ .Name }}</span>
+            <span class="terms-card-meta">
+                {{ $count }}&thinsp;post{{ if ne $count 1 }}s{{ end }}
+            </span>
+        </a>
+    </li>
+    {{- end }}
+    {{- end }}
+</ul>
+
+{{- else }}
+
+{{- /* ── Tag DETAIL page (/tags/ai/) — post list ─────────── */}}
 {{- $count := len .Pages }}
 
 <header class="page-header term-detail-header">
@@ -100,5 +136,7 @@
 {{- end }}
 
 {{- end }}{{/* end if .Pages */}}
+
+{{- end }}{{/* end else (term detail) */}}
 
 {{- end }}{{- /* end main */ -}}
