@@ -1,0 +1,185 @@
+/* =====================================================
+   SEARCH RESULTS & TAG DETAIL CARDS — Enhanced UX/UI
+   ===================================================== */
+
+/* ── Post entry card improvements ──────────────────── */
+
+.post-entry {
+    background: linear-gradient(135deg, var(--entry) 0%, color-mix(in srgb, var(--entry) 95%, var(--accent) 2%) 100%);
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 8px color-mix(in srgb, var(--primary) 5%, transparent);
+    transition:
+        box-shadow 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.15s ease,
+        background 0.25s ease;
+}
+
+.post-entry:hover {
+    border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+    box-shadow:
+        0 6px 20px color-mix(in srgb, var(--accent) 15%, transparent),
+        inset 0 0 20px color-mix(in srgb, var(--accent) 3%, transparent);
+    transform: translateY(-2px);
+}
+
+.post-entry:active {
+    transform: scale(0.98) translateY(-1px);
+}
+
+/* ── Entry header (title) ─────────────────────────── */
+
+.entry-header h2 {
+    color: var(--primary);
+    transition: color 0.15s ease;
+    margin: 0 0 0.5rem 0;
+}
+
+.post-entry:hover .entry-header h2 {
+    color: var(--accent);
+}
+
+/* ── Entry content (summary) ─────────────────────── */
+
+.entry-content {
+    color: var(--secondary);
+    transition: color 0.15s ease;
+    margin: 0.75rem 0;
+}
+
+.post-entry:hover .entry-content {
+    color: color-mix(in srgb, var(--secondary) 90%, var(--primary) 10%);
+}
+
+/* ── Entry footer (metadata) ─────────────────────── */
+
+.entry-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid color-mix(in srgb, var(--border) 60%, transparent);
+}
+
+.entry-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--secondary);
+    letter-spacing: 0.01em;
+    transition: color 0.15s ease;
+}
+
+.post-entry:hover .entry-meta {
+    color: color-mix(in srgb, var(--secondary) 85%, var(--accent) 15%);
+}
+
+/* ── Reading time badge ──────────────────────────── */
+
+.entry-meta::before {
+    content: '⏱';
+    opacity: 0.7;
+}
+
+/* ── Accent accent on left border ────────────────── */
+
+.post-entry::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--accent);
+    border-radius: var(--radius) 0 0 var(--radius);
+    opacity: 0;
+    transition: opacity 0.25s ease, width 0.25s ease;
+}
+
+.post-entry:hover::before {
+    opacity: 1;
+    width: 4px;
+}
+
+/* ── Adjust padding for accent bar ──────────────── */
+
+.post-entry {
+    padding: var(--gap) var(--gap) var(--gap) calc(var(--gap) + 1px);
+}
+
+/* ── Tag entry specific (hide cover) ────────────── */
+
+.tag-entry .entry-cover {
+    display: none;
+}
+
+/* ── Mobile adjustments ──────────────────────────── */
+
+@media (max-width: 600px) {
+    .post-entry {
+        padding: 1rem 1rem 1rem calc(1rem + 1px);
+        margin-bottom: 0.8rem;
+    }
+
+    .entry-header h2 {
+        font-size: 1.1rem;
+    }
+
+    .entry-content {
+        font-size: 0.875rem;
+        margin: 0.5rem 0;
+    }
+
+    .entry-footer {
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+        padding-top: 0.5rem;
+    }
+
+    .entry-meta {
+        font-size: 0.75rem;
+    }
+}
+
+/* ── First entry on search/homepage override ────── */
+
+.first-entry {
+    background: linear-gradient(135deg, var(--entry) 0%, color-mix(in srgb, var(--entry) 92%, var(--accent) 5%) 100%);
+    border: 2px solid color-mix(in srgb, var(--accent) 30%, var(--border));
+    box-shadow:
+        0 4px 16px color-mix(in srgb, var(--accent) 12%, transparent),
+        inset 0 0 30px color-mix(in srgb, var(--accent) 4%, transparent);
+}
+
+.first-entry:hover {
+    border-color: var(--accent);
+    box-shadow:
+        0 8px 24px color-mix(in srgb, var(--accent) 20%, transparent),
+        inset 0 0 30px color-mix(in srgb, var(--accent) 5%, transparent);
+}
+
+/* Dark mode enhancements */
+@media (prefers-color-scheme: dark) {
+    .post-entry {
+        background: linear-gradient(135deg, var(--entry) 0%, color-mix(in srgb, var(--entry) 98%, var(--accent) 1%) 100%);
+    }
+
+    .post-entry:hover {
+        box-shadow:
+            0 6px 20px color-mix(in srgb, var(--accent) 20%, transparent),
+            inset 0 0 20px color-mix(in srgb, var(--accent) 4%, transparent);
+    }
+
+    .entry-meta {
+        opacity: 0.8;
+    }
+
+    .post-entry:hover .entry-meta {
+        opacity: 1;
+    }
+}
