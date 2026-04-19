@@ -1,7 +1,6 @@
 {{- define "main" }}
 
-{{- $totalPosts := 0 }}
-{{- range .Data.Terms }}{{- $totalPosts = add $totalPosts .Count }}{{- end }}
+{{- $totalPosts := len (where site.RegularPages "Section" "posts") }}
 {{- $totalTags  := len .Data.Terms }}
 
 <header class="page-header terms-page-header">
