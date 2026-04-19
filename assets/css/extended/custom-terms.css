@@ -187,7 +187,7 @@
 
 .term-detail-main {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     gap: 0.9rem;
     flex-wrap: wrap;
 }
@@ -221,8 +221,6 @@
     padding: 0.22em 0.75em;
     letter-spacing: 0.02em;
     white-space: nowrap;
-    align-self: center;
-    transform: translateY(-0.02em);
 }
 
 /* ── RSS icon ─────────────────────────────────────── */
