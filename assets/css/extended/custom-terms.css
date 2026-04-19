@@ -210,15 +210,19 @@
 .term-detail-count {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     font-size: 0.78rem;
     font-weight: 600;
+    line-height: 1;
     color: var(--accent);
     background: color-mix(in srgb, var(--accent) 12%, var(--entry));
     border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--border));
     border-radius: 999px;
-    padding: 0.2em 0.75em;
+    padding: 0.22em 0.75em;
     letter-spacing: 0.02em;
     white-space: nowrap;
+    align-self: center;
+    transform: translateY(-0.02em);
 }
 
 /* ── RSS icon ─────────────────────────────────────── */
